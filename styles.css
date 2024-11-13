@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Faculty Glyphic', sans-serif; 
 }
 
 body {
@@ -11,6 +11,7 @@ body {
     color: #333;
     line-height: 1.6;
     padding: 20px;
+    font-family: 'Faculty Glyphic', sans-serif; 
 }
 
 /* Header */
@@ -27,6 +28,7 @@ header h1 {
 
 /* Navegación */
 nav {
+    background-color: #333;
     margin-top: 20px;
     text-align: center;
 }
@@ -99,20 +101,36 @@ nav ul li a:hover {
     color: #ff6347;
 }
 
+.product-details .button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Centra los botones dentro del contenedor */
+    margin-top: 10px; /* Espacio entre los botones y el precio */
+}
+
 .product-details button {
     background-color: #ff6347;
     color: #fff;
     padding: 10px;
-    width: 100%;
+    flex: 1; /* Hace que los botones ocupen el mismo ancho */
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
+.product-details .ver-mas {
+    background-color: #4CAF50; /* Color para diferenciar el botón */
+}
+
 .product-details button:hover {
     background-color: #e5533c;
 }
+
+.product-details .ver-mas:hover {
+    background-color: #45a049;
+}
+
 
 /* Sección de Reseñas */
 .reviews {

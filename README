@@ -1,0 +1,25 @@
+# Tienda TecnoKeys
+
+## Descripción
+Tienda TecnoKeys es una tienda en línea de productos tecnológicos especializados en teclados. La página ofrece una interfaz simple y clara para visualizar productos, leer reseñas y contactar con el equipo de soporte.
+
+## Características
+- **Productos**: Muestra una variedad de teclados con detalles como nombre, descripción y precio.
+- **Reseñas**: Permite a los usuarios leer opiniones de otros compradores sobre los productos.
+- **Formulario de Contacto**: Facilita el contacto con el equipo de soporte a través de un formulario funcional con Formspree.
+
+## Tecnologías Utilizadas
+- **HTML**: Para la estructura y el contenido de la página.
+- **CSS**: Para el diseño y el estilo, utilizando Flexbox y Grid para el layout.
+- **Google Fonts**: Para mejorar la tipografía del sitio web.
+- **Formspree**: Para el envío de formularios de contacto.
+
+## Instrucciones para Ejecutar el Proyecto
+1. Clona el repositorio a tu máquina local:
+    ```bash
+    git clone <URL_DEL_REPOSITORIO>
+    ```
+2. Abre el archivo `index.html` en tu navegador para ver la página.
+
+## Enlaces
+https://sebavc18.github.io/TecnoKeys/
