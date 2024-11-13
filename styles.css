@@ -36,6 +36,7 @@ header h1 {
     border-radius: 50%; /* Hacerlo circular */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    z-index: 9999; /* Asegura que el carrito esté por encima de otros elementos */
 }
 
 /* Estilo para el ícono del carrito */
