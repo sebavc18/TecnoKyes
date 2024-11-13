@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Venta de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Tienda TecnoKeys</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#resenas">Reseñas</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Sección de productos -->
+        <section id="productos">
+            <h2>Productos</h2>
+            <div class="products">
+                <!-- Producto 1 -->
+                <div class="product">
+                    <img src="images/teclado1.jpg" alt="Teclado Mecánico">
+                    <div class="product-details">
+                        <h3>Teclado Mecánico</h3>
+                        <p>Teclado mecánico con retroiluminación RGB y teclas programables.</p>
+                        <div class="price">$99.99</div>
+                        <button>Agregar al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product">
+                    <img src="images/teclado2.jpg" alt="Teclado Gaming">
+                    <div class="product-details">
+                        <h3>Teclado Gaming</h3>
+                        <p>Teclado gaming con switches rápidos y diseño ergonómico.</p>
+                        <div class="price">$79.99</div>
+                        <button>Agregar al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product">
+                    <img src="images/teclado3.jpg" alt="Teclado Compacto">
+                    <div class="product-details">
+                        <h3>Teclado Compacto</h3>
+                        <p>Teclado compacto para una experiencia de escritura rápida y precisa.</p>
+                        <div class="price">$59.99</div>
+                        <button>Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resenas">
+            <h2>Reseñas</h2>
+            <div class="reviews">
+                <div class="review">
+                    <h3>Juan Pérez</h3>
+                    <p>"Excelente calidad, me encantó el teclado mecánico. Perfecto para juegos."</p>
+                </div>
+                <div class="review">
+                    <h3>María González</h3>
+                    <p>"El teclado gaming es muy cómodo, ideal para largas horas de uso."</p>
+                </div>
+                <div class="review">
+                    <h3>Carlos López</h3>
+                    <p>"Teclado compacto, perfecto para mi espacio de trabajo. Totalmente recomendado."</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Sección de contacto -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form action="https://formspree.io/f/manyjddz" method="POST">
+                <!-- Campo de Nombre -->
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+        
+                <!-- Campo de Correo Electrónico -->
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <!-- Campo de Mensaje -->
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+        
+                <!-- Botón de Enviar -->
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda TecnoKeys</p>
+    </footer>
+
+</body>
+</html>

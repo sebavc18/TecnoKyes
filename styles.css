@@ -1,0 +1,259 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+/* Navegación */
+nav {
+    margin-top: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+/* Sección de productos */
+.products {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Producto individual */
+.product {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 30%;
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.product-details h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.product-details .price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff6347;
+}
+
+.product-details button {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-details button:hover {
+    background-color: #e5533c;
+}
+
+/* Sección de Reseñas */
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Distribuye las columnas de manera flexible */
+    gap: 20px; /* Espacio entre las reseñas */
+    margin-top: 30px;
+}
+
+/* Estilo para cada reseña */
+.review {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.review h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.review p {
+    font-size: 1em;
+    color: #555;
+}
+
+
+/* Estilos para el formulario */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e5533c;
+}
+
+/* Diseño responsivo para el formulario */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+
+    form input, form textarea {
+        font-size: 0.95em;
+    }
+
+    form button {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 10px;
+    }
+
+    form input, form textarea {
+        font-size: 0.9em;
+    }
+
+    form button {
+        font-size: 1em;
+    }
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .products {
+        justify-content: center;
+    }
+
+    .product {
+        width: 45%;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .products {
+        justify-content: center;
+    }
+
+    .product {
+        width: 90%;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+}
