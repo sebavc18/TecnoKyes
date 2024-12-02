@@ -1,0 +1,104 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Faculty Glyphic', sans-serif; 
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    font-family: 'Faculty Glyphic', sans-serif; 
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header h1 a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Posiciona el icono del carrito */
+#carrito-icono {
+    position: fixed;
+    top: 30px; /* Distancia desde la parte superior */
+    right: 30px; /* Distancia desde la parte derecha */
+    background-color: #ff6347; /* Color de fondo naranja */
+    padding: 10px;
+    border-radius: 50%; /* Hacerlo circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 9999; /* Asegura que el carrito esté por encima de otros elementos */
+}
+
+/* Estilo para el ícono del carrito */
+#carrito-icono i {
+    color: white; /* Color blanco para el ícono */
+    font-size: 1.5em; /* Tamaño del ícono */
+}
+
+/* Opcional: estilo para el contador de artículos */
+#carrito-count {
+    position: absolute;
+    top: -5px; /* Mover hacia arriba */
+    right: -5px; /* Mover hacia la derecha */
+    background-color: white;
+    color: #ff6347; /* Color del texto (coincide con el fondo) */
+    font-size: 0.9em;
+    padding: 2px 6px;
+    border-radius: 50%; /* Hacerlo redondo */
+    font-weight: bold;
+}
+
+
+/* Navegación */
+nav {
+    background-color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+/* producto */
+
+.teclado img{
+    width: 50%;
+    display: flexbox;
+
+}
+
+.teclado h2{
+    width: 50%;
+    display: flexbox;
+}

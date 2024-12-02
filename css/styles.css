@@ -26,6 +26,11 @@ header h1 {
     font-size: 2.5em;
 }
 
+header h1 a{
+    color: #fff;
+    text-decoration: none;
+}
+
 /* Posiciona el icono del carrito */
 #carrito-icono {
     position: fixed;
@@ -59,31 +64,34 @@ header h1 {
 }
 
 
-/* Navegación */
 nav {
     background-color: #333;
-    margin-top: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Centra los enlaces horizontalmente */
+    padding: 10px 0; /* Añade algo de espacio arriba y abajo */
 }
 
-nav ul {
-    list-style: none;
-    display: inline-flex;
+.navbar-nav {
+    display: flex;
+    justify-content: center; /* Centra los enlaces dentro del contenedor */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    padding: 0;
 }
 
-nav ul li {
-    margin: 0 15px;
+.navbar-nav .nav-item {
+    margin: 0 20px; /* Espaciado entre los enlaces */
 }
 
-nav ul li a {
+.nav-link {
     color: #fff;
-    text-decoration: none;
     font-size: 1.1em;
+    text-decoration: none;
 }
 
-nav ul li a:hover {
-    color: #ff6347;
+.nav-link:hover {
+    color: #ff6347; /* Color al pasar el ratón */
 }
+
 
 /* Sección de productos */
 .products {
@@ -150,6 +158,19 @@ nav ul li a:hover {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.product-details a {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px;
+    flex: 1; /* Hace que los botones ocupen el mismo ancho */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
 }
 
 .product-details .ver-mas {
