@@ -31,35 +31,79 @@ header h1 a{
     text-decoration: none;
 }
 
-/* Posiciona el icono del carrito */
-#carrito-icono {
+/* Estilos para el carrito desplegable */
+#carrito-contenedor {
     position: fixed;
-    top: 30px; /* Distancia desde la parte superior */
+    top: 100px; /* Distancia desde la parte superior */
     right: 30px; /* Distancia desde la parte derecha */
-    background-color: #ff6347; /* Color de fondo naranja */
-    padding: 10px;
-    border-radius: 50%; /* Hacerlo circular */
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    z-index: 9999; /* Asegura que el carrito esté por encima de otros elementos */
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px; /* Ancho del contenedor */
+    max-height: 400px;
+    overflow-y: auto; /* Hacer que el contenido largo tenga un scroll */
+    z-index: 9999;
+    display: none; /* Ocultar por defecto */
+}
+
+/* Título del carrito */
+#carrito-contenedor h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los productos dentro del carrito */
+#productos-carrito {
+    margin-bottom: 20px;
+}
+
+/* Producto en el carrito */
+.carrito-producto {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.carrito-producto h4 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.carrito-producto p {
+    font-size: 1.1em;
+    color: #555;
 }
 
 /* Estilo para el ícono del carrito */
+#carrito-icono {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background-color: #ff6347;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 9999;
+}
+
 #carrito-icono i {
-    color: white; /* Color blanco para el ícono */
-    font-size: 1.5em; /* Tamaño del ícono */
+    color: white;
+    font-size: 1.5em;
 }
 
 /* Opcional: estilo para el contador de artículos */
 #carrito-count {
     position: absolute;
-    top: -5px; /* Mover hacia arriba */
-    right: -5px; /* Mover hacia la derecha */
+    top: -5px;
+    right: -5px;
     background-color: white;
-    color: #ff6347; /* Color del texto (coincide con el fondo) */
+    color: #ff6347;
     font-size: 0.9em;
     padding: 2px 6px;
-    border-radius: 50%; /* Hacerlo redondo */
+    border-radius: 50%;
     font-weight: bold;
 }
 

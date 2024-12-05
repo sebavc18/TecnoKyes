@@ -17,8 +17,15 @@
 <body>
 
     <header>
+    
         <h1><a href="index.html"> TecnoKeys</a></h1>
         <div id="carrito-icono">
+                <!-- Carrito desplegable -->
+        <div id="carrito-contenedor">
+            <h3>Carrito de compras</h3>
+            <div id="productos-carrito"></div>
+            <a href="/pages/carrito.html" id="ir-al-carrito">Ir al carrito</a>
+        </div>
             <i class="fas fa-shopping-cart"></i>
             <!-- Opcional: número de artículos en el carrito -->
             <span id="carrito-count">0</span>
@@ -152,16 +159,12 @@
                 <button type="submit">Enviar</button>
             </form>
         </section>
-        
+
+
     </main>
 
     <footer>
         <p>&copy; 2024 Tienda TecnoKeys</p>
     </footer>
 
-    <script>
-        // Función para mostrar o ocultar la descripción ampliada de un producto
-        function mostrarDetalleProducto(id) {
-            const detalle = document.getElementById(id);
-            if (detalle.style.display === "none") {
-                detalle
+    
