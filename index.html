@@ -10,9 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/keybord.png" type="image/x-icon">
-    <script src="js/carritoDeCompra.js" defer></script>
-    <script src="js/formulario.js" defer></script>
-    <script src="js/lista.js" defer></script>
+    <script src="js/main.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
@@ -48,8 +46,6 @@
         </div>
       </nav>
       
-      
-
     <main>
         <!-- Sección de productos -->
         <section id="productos">
@@ -64,8 +60,12 @@
                         <div class="price">$99.99</div>
                         <div class="button-container">
                             <button class="agregar-carrito" data-nombre="Teclado Mecánico" data-precio="99.99">Agregar al carrito</button>
-                            <a  class="button">Ver detalle</a>
+                            <a href="javascript:void(0);" class="button" id="detalle1">Ver detalle</a>
                         </div>
+                    </div>
+                    <!-- Descripción ampliada oculta -->
+                    <div class="product-detail-expanded" id="detalle-producto1" style="display:none;">
+                        <p>Descripción ampliada: Este teclado mecánico tiene retroiluminación RGB personalizable, teclas programables para macros, y un diseño ergonómico que proporciona comodidad durante largas sesiones de uso. Perfecto para gamers y usuarios exigentes.</p>
                     </div>
                 </div>
 
@@ -78,8 +78,12 @@
                         <div class="price">$79.99</div>
                         <div class="button-container">
                             <button class="agregar-carrito" data-nombre="Teclado Gaming" data-precio="79.99">Agregar al carrito</button>
-                            <a  class="button">Ver detalle</a>
+                            <a href="javascript:void(0);" class="button" id="detalle2">Ver detalle</a>
                         </div>
+                    </div>
+                    <!-- Descripción ampliada oculta -->
+                    <div class="product-detail-expanded" id="detalle-producto2" style="display:none;">
+                        <p>Descripción ampliada: Teclado gaming con switches rápidos que proporcionan una respuesta instantánea, ideal para juegos de alta velocidad. El diseño ergonómico asegura comodidad durante largas horas de juego.</p>
                     </div>
                 </div>
 
@@ -92,8 +96,12 @@
                         <div class="price">$59.99</div>
                         <div class="button-container">
                             <button class="agregar-carrito" data-nombre="Teclado Compacto" data-precio="59.99">Agregar al carrito</button>
-                            <a  class="button">Ver detalle</a>
+                            <a href="javascript:void(0);" class="button" id="detalle3">Ver detalle</a>
                         </div>
+                    </div>
+                    <!-- Descripción ampliada oculta -->
+                    <div class="product-detail-expanded" id="detalle-producto3" style="display:none;">
+                        <p>Descripción ampliada: El teclado compacto es ideal para quienes buscan una solución eficiente y minimalista. Su tamaño pequeño y las teclas de respuesta rápida lo hacen perfecto para escribir con precisión y rapidez.</p>
                     </div>
                 </div>
             </div>
@@ -128,23 +136,19 @@
         <!-- Sección de contacto -->
         <section id="contacto">
             <h2>Contacto</h2>
-            <form id = "form" action="https://formspree.io/f/manyjddz" method="POST">
-                <!-- Campo de Nombre -->
+            <form id="form" action="https://formspree.io/f/manyjddz" method="POST">
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" >
+                <input type="text" id="nombre" name="nombre">
                 <span id="nombre-error" style="color: red; display: none;"></span>
         
-                <!-- Campo de Correo Electrónico -->
                 <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" >
+                <input type="email" id="email" name="email">
                 <span id="email-error" style="color: red; display: none;"></span>
         
-                <!-- Campo de Mensaje -->
                 <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" ></textarea>
+                <textarea id="mensaje" name="mensaje"></textarea>
                 <span id="mensaje-error" style="color: red; display: none;"></span>
         
-                <!-- Botón de Enviar -->
                 <button type="submit">Enviar</button>
             </form>
         </section>
@@ -155,5 +159,9 @@
         <p>&copy; 2024 Tienda TecnoKeys</p>
     </footer>
 
-</body>
-</html>
+    <script>
+        // Función para mostrar o ocultar la descripción ampliada de un producto
+        function mostrarDetalleProducto(id) {
+            const detalle = document.getElementById(id);
+            if (detalle.style.display === "none") {
+                detalle
