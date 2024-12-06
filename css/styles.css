@@ -31,7 +31,6 @@ header h1 a{
     text-decoration: none;
 }
 
-/* Estilos para el carrito desplegable */
 #carrito-contenedor {
     position: fixed;
     top: 100px; /* Distancia desde la parte superior */
@@ -41,11 +40,12 @@ header h1 a{
     border-radius: 8px;
     padding: 20px;
     width: 300px; /* Ancho del contenedor */
-    max-height: 400px;
-    overflow-y: auto; /* Hacer que el contenido largo tenga un scroll */
+    max-height: 400px; /* Limita la altura máxima */
+    overflow-y: auto; /* Permite desplazamiento solo si el contenido excede la altura */
     z-index: 9999;
     display: none; /* Ocultar por defecto */
 }
+
 
 /* Título del carrito */
 #carrito-contenedor h3 {
@@ -107,12 +107,75 @@ header h1 a{
     font-weight: bold;
 }
 
+/* Estilo básico para el botón de eliminación */
+.eliminar-producto {
+    background-color: #ff4d4d; /* Rojo claro */
+    color: white; /* Texto en blanco */
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#ir-al-carrito{
+    background-color: #ff4d4d; /* Rojo claro */
+    color: white; /* Texto en blanco */
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+}
+
+/* Estilo al pasar el ratón por encima (hover) */
+.eliminar-producto:hover {
+    background-color: #ff1a1a; /* Rojo más oscuro */
+    transform: scale(1.1); /* Agrandar ligeramente */
+}
+
+/* Estilo cuando el botón está presionado (active) */
+.eliminar-producto:active {
+    transform: scale(0.95); /* Reducir ligeramente al hacer clic */
+}
+
+/* Estilo para asegurarse de que el botón se vea bien dentro del producto */
+.carrito-producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Estilo para la imagen y nombre del producto */
+.carrito-producto img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.carrito-producto h4 {
+    flex: 1;
+    margin: 0;
+}
+
+/* Estilo para el precio */
+.carrito-producto p {
+    margin: 0;
+    font-weight: bold;
+}
+
 
 nav {
     background-color: #333;
     display: flex;
     justify-content: center; /* Centra los enlaces horizontalmente */
     padding: 10px 0; /* Añade algo de espacio arriba y abajo */
+
 }
 
 .navbar-nav {
@@ -372,4 +435,20 @@ footer {
     .reviews-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Ajuste del tamaño de las imágenes en el carrito */
+.carrito-producto img {
+    width: 50px; /* Ancho fijo */
+    height: 50px; /* Altura fija */
+    object-fit: cover; /* Asegura que la imagen mantenga su proporción dentro del tamaño especificado */
+    border-radius: 4px; /* Opcional: bordes redondeados */
+    margin-right: 10px; /* Espaciado con el texto del producto */
+}
+
+/* Alineación de productos en el carrito */
+.carrito-producto {
+    display: flex; /* Configura un diseño en línea para imagen y texto */
+    align-items: center; /* Alinea verticalmente la imagen y el texto */
+    gap: 10px; /* Espaciado entre elementos */
 }

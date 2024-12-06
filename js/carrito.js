@@ -76,8 +76,15 @@ function actualizarVistaCarrito() {
             eliminarDelCarrito(indice);
         });
     });
-}
 
+    // Agregar un botón para finalizar compra si hay productos en el carrito
+    const finalizarCompraBtn = document.getElementById("finalizar-compra");
+    if (carrito.length > 0) {
+        finalizarCompraBtn.style.display = "block";
+    } else {
+        finalizarCompraBtn.style.display = "none";
+    }
+}
 
 // Función para cargar el carrito desde localStorage al cargar la página
 function cargarCarritoDesdeLocalStorage() {
@@ -109,82 +116,19 @@ document.getElementById("carrito-icono").addEventListener("click", () => {
 // Llamar a la función que carga el carrito desde localStorage al cargar la página
 document.addEventListener('DOMContentLoaded', cargarCarritoDesdeLocalStorage);
 
-// Función para validar el formulario de contacto
-function validarFormulario(evento) {
-    evento.preventDefault();
-    const nombreError = document.getElementById("nombre-error");
-    const emailError = document.getElementById("email-error");
-    const mensajeError = document.getElementById("mensaje-error");
-
-    const campos = [
-        {id: "nombre", elemento: document.getElementById("nombre"), errorId: "nombre-error", mensajeError: "Por favor ingrese su nombre."},
-        {id: "email", elemento: document.getElementById("email"), errorId: "email-error", mensajeError: "Por favor ingrese un email válido."},
-        {id: "mensaje", elemento: document.getElementById("mensaje"), errorId: "mensaje-error", mensajeError: "Por favor ingrese un mensaje."}
-    ];
-
-    let formularioCompleto = true;
-    campos.forEach(campo => {
-        const errorElement = document.getElementById(campo.errorId);
-        if (campo.elemento.value.trim() === "") {
-            campo.elemento.style.borderColor = "red";
-            errorElement.style.display = "block";
-            errorElement.innerHTML = campo.mensajeError;
-            formularioCompleto = false;
-        } else {
-            campo.elemento.style.borderColor = "";
-            errorElement.style.display = "none";
-        }
-    });
-
-    const email = document.getElementById("email");
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailRegex.test(email.value)) {
-        email.style.borderColor = "red";
-        formularioCompleto = false;
-        emailError.style.display = "block"; 
-        emailError.innerHTML = "Ingrese un email válido"; 
+// Función para finalizar la compra (puedes personalizarla)
+function finalizarCompra() {
+    if (carrito.length > 0) {
+        alert("Compra finalizada con éxito. ¡Gracias por tu compra!");
+        // Limpiar el carrito después de la compra
+        carrito = [];
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        actualizarVistaCarrito();
+        actualizarContadorCarrito();
     } else {
-        email.style.borderColor = "";
-        emailError.style.display = "none";
-    }
-
-    if (!formularioCompleto) {
-        console.log("Por favor llene los campos resaltados en rojo");
-    } else {
-        console.log("Formulario completado");
+        alert("No tienes productos en el carrito.");
     }
 }
 
-const formulario = document.getElementById("form");
-formulario.addEventListener("submit", validarFormulario);
-
-// Función para mostrar o ocultar la descripción ampliada de un producto
-function mostrarDetalleProducto(id) {
-    const detalle = document.getElementById(id);
-    detalle.style.display = (detalle.style.display === "none") ? "block" : "none";
-}
-
-// Asignar el evento de clic para cada botón "Ver detalle"
-document.querySelectorAll('.button').forEach(button => {
-    button.addEventListener('click', (event) => {
-        event.preventDefault();
-
-        const id = button.getAttribute('id').replace('detalle', 'detalle-producto');
-        mostrarDetalleProducto(id);
-    });
-});
-
-// Crear un ciclo que genere dinámicamente una lista de productos disponibles y los muestre en la consola 
-const productos = [
-    {producto: "Teclado mecánico", precio: "$99.99", stock: 21, imagen: "../images/teclado1.jpg"},
-    {producto: "Teclado gaming", precio: "$79.99", stock: 11, imagen: "./images/teclado2.jpg"},
-    {producto: "Teclado compacto", precio: "$59.99", stock: 2, imagen: "../images/teclado3.jpg"}
-];
-
-productos.forEach(function(producto) {
-    console.log(`Nombre: ${producto.producto}, Precio: ${producto.precio}, Stock: ${producto.stock}`);
-});
-
-// Llamar a la función que carga el carrito desde localStorage al cargar la página
-document.addEventListener('DOMContentLoaded', cargarCarritoDesdeLocalStorage);
+// Asignar el evento para finalizar la compra
+document.getElementById("finalizar-compra").addEventListener("click", finalizarCompra);
