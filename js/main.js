@@ -188,3 +188,4 @@ productos.forEach(function(producto) {
 
 // Llamar a la función que carga el carrito desde localStorage al cargar la página
 document.addEventListener('DOMContentLoaded', cargarCarritoDesdeLocalStorage);
+
